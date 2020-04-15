@@ -7,6 +7,6 @@ coverage
 node_modules
 .env
 .env*
-# dist
+dist
 .cache
 .idea

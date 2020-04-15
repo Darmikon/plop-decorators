@@ -1,9 +1,14 @@
 {
   "name": "plop-decorators",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "keywords": [],
-  "homepage": "https://github.com/Darmikon/plop-decorators#readme",
+  "keywords": [
+    "plop",
+    "generators",
+    "code generators",
+    "scaffolding"
+  ],
+  "homepage": "https://github.com/Darmikon/plop-decorators",
   "bugs": {
     "url": "https://github.com/Darmikon/plop-decorators/issues"
   },
@@ -12,18 +17,27 @@
     "url": "git+https://github.com/Darmikon/plop-decorators.git"
   },
   "license": "ISC",
-  "author": "",
-  "main": "dist/index.js",
+  "author": "Darmikon",
+  "main": "index.js",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "changelog": "conventional-changelog --preset angular -i CHANGELOG.md -s -r 1",
     "changelog:help": "conventional-changelog --help",
     "cz": "git-cz",
     "cz:retry": "git cz --retry",
-    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
     "sort:package": "npx sort-package-json",
     "start": "yarn build && node dist/index",
-    "test": "ENV=test jest"
+    "test": "ENV=test jest",
+    "#preversion": "npm run lint",
+    "#version": "npm run format && git add -A src",
+    "#postversion": "git push && git push --tags"
   },
   "config": {
     "commitizen": {
