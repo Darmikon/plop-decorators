@@ -1,7 +1,7 @@
 module.exports = {
   // https://github.com/conventional-changelog/standard-version#lifecycle-scripts
   scripts: {
-    prebump: 'echo Bumping version starts',
+    // prebump: 'echo Bumping version starts',
     // postchangelog:
     //   "replace 'https://github.com/myproject/issues/' 'https://myjira/browse/' CHANGELOG.md",
   },
