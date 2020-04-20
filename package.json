@@ -21,7 +21,7 @@
   },
   "license": "ISC",
   "author": "Darmikon",
-  "main": "index.js",
+  "main": "dist/index.js",
   "files": [
     "dist/**/*"
   ],
@@ -39,10 +39,10 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "release": "git add . && npx standard-version --commit-all",
-    "release:help": "npx standard-version --help",
     "release:dry": "npx standard-version --dry-run",
     "release:first": "npx standard-version --first-release",
     "release:first:dry": "npx standard-version --first-release --dry-run",
+    "release:help": "npx standard-version --help",
     "sort:package": "npx sort-package-json",
     "start": "yarn build && node dist/index",
     "test": "ENV=test jest"
@@ -52,6 +52,7 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
@@ -78,6 +79,5 @@
     "prettier": "^2.0.4",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
-  },
-  "dependencies": {}
+  }
 }
