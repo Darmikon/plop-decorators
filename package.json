@@ -23,6 +23,9 @@
     "dist/**/*"
   ],
   "scripts": {
+    "#postversion": "git push && git push --tags",
+    "#preversion": "npm run lint",
+    "#version": "npm run format && git add -A src",
     "build": "tsc",
     "changelog": "conventional-changelog --preset angular -i CHANGELOG.md -s -r 1",
     "changelog:help": "conventional-changelog --help",
@@ -32,12 +35,14 @@
     "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
+    "release": "git add . && npx standard-version --commit-all",
+    "release:help": "npx standard-version --help",
+    "release:dry": "npx standard-version --dry-run",
+    "release:first": "npx standard-version --first-release",
+    "release:first:dry": "npx standard-version --first-release --dry-run",
     "sort:package": "npx sort-package-json",
     "start": "yarn build && node dist/index",
-    "test": "ENV=test jest",
-    "#preversion": "npm run lint",
-    "#version": "npm run format && git add -A src",
-    "#postversion": "git push && git push --tags"
+    "test": "ENV=test jest"
   },
   "config": {
     "commitizen": {
