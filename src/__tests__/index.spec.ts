@@ -1,7 +1,9 @@
-import { App } from '../index';
-
-describe('index suite', function () {
-  it('should work', function () {
-    expect(App).toBeDefined();
+describe('index suite', () => {
+  it('should have all decorators', () => {
+    const app = require('../index');
+    expect(app.withActions).toBeInstanceOf(Function);
+    expect(app.withGenerators).toBeInstanceOf(Function);
+    expect(app.withHelpers).toBeInstanceOf(Function);
+    // †function
   });
 });
