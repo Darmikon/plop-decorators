@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [
-    "plop",
-    "generators",
-    "code generators",
-    "scaffolding"
+    "scaffolding",
+    "yeoman",
+    "make",
+    "build",
+    "generate",
+    "gen",
+    "plop"
   ],
   "homepage": "https://github.com/Darmikon/plop-decorators",
   "bugs": {
