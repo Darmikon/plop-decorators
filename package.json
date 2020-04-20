@@ -38,7 +38,7 @@
     "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
-    "release": "git add . && npx standard-version --commit-all",
+    "release": "npx standard-version",
     "release:dry": "npx standard-version --dry-run",
     "release:first": "npx standard-version --first-release",
     "release:first:dry": "npx standard-version --first-release --dry-run",
