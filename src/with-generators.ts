@@ -3,12 +3,17 @@ import path from 'path';
 import { NodePlopAPI } from 'node-plop';
 
 export const withGenerators = (plop: NodePlopAPI, generatorsFolder?: string) => {
+  process.chdir(plop.getPlopfilePath());
   const folder =
     generatorsFolder === undefined || generatorsFolder === null ? 'generators' : generatorsFolder;
-  const normalizedPath = path.join(__dirname, folder);
+  const normalizedPath = path.join(process.cwd(), folder);
 
-  console.log(normalizedPath);
   fs.readdirSync(normalizedPath).forEach((file) => {
-    require(path.resolve(__dirname, folder, file)).default(plop);
+    const generator = require(path.resolve(process.cwd(), folder, file));
+    if (generator.default) {
+      generator.default(plop);
+    } else {
+      generator(plop);
+    }
   });
 };

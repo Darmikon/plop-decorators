@@ -68,5 +68,5 @@
   },
   "compileOnSave": true,
   "include": ["src"],
-  "exclude": ["node_modules", "**/*.spec.ts", "src/__mocks__", "src/types"]
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
