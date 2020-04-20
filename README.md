@@ -15,6 +15,11 @@ Inculde 3 decorators: `withHelpers`, `withActions`, `withGenerators`
 Include 1 custom action `prepend`
 The action injects the replacement before the market and not after
 
+### Installation
+```
+yarn add --dev plop plop-decorators
+```
+
 #### API
 
 1. Create `index.js` inside `.plop` folder of root directory
